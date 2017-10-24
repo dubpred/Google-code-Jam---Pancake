@@ -21,8 +21,8 @@ private static Scanner sc;
 private static PrintWriter outp;
 
 public static void main(String...args) throws FileNotFoundException{
-	sc = new Scanner(new File("C:\\Users\\pl73775\\Downloads\\A-small-practice.in"));
-	outp = new PrintWriter("C:\\Users\\pl73775\\Downloads\\A-small-practice-solution.txt");
+	sc = new Scanner(new File("C:\\Users\\pl73775\\Downloads\\A-large-practice.in"));
+	outp = new PrintWriter("C:\\Users\\pl73775\\Downloads\\A-large-practice-solution.txt");
 	
 	
 	int counter = 0;//counts the case #
@@ -69,7 +69,7 @@ public static Object howManyFlips(int k, String s){
 			Pancakes.insert(minusIndex, flippedSubString);
 			//System.out.println(Pancakes.toString());
 				
-				if (answer > 100){
+				if (answer > 10000){
 					return "IMPOSSIBLE";
 				}
 			}
