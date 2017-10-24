@@ -2,7 +2,10 @@ package OversizedPancakeFlipper;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
+import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
@@ -14,22 +17,24 @@ public class OversizedPancakeFlipper {
 private static String s;//the amount of pancakes and status 
 private static int k; //amount of consecutive pancakes the flipper can flip at one time
 private static int t;//number of test cases
+private static Scanner sc;
+private static PrintWriter outp;
 
 public static void main(String...args) throws FileNotFoundException{
-	Scanner sc = new Scanner(new File("C:\\Users\\pl73775\\Downloads\\A-small-practice.in"));
-	//Scanner sc = new Scanner ("3 ---- 4 +--+--+--+ 3 ++++++ 2");
-	int counter = 0;
-	t = sc.nextInt();
+	sc = new Scanner(new File("C:\\Users\\pl73775\\Downloads\\A-small-practice.in"));
+	outp = new PrintWriter("C:\\Users\\pl73775\\Downloads\\A-small-practice-solution.txt");
+	
+	
+	int counter = 0;//counts the case #
+	t = sc.nextInt();//size of test case
 	
 	while(sc.hasNext()){
-		if(sc.hasNext()){
-			s = sc.next().toString();	
-		}
-		k = sc.nextInt();
 		counter ++;
-		System.out.println("Case #"+ counter+": "  + howManyFlips(k,s));
+		s = sc.next().toString();	
+		k = sc.nextInt();
 		
-		
+		outp.println("Case #"+ counter+": "  + howManyFlips(k,s));
+		outp.flush();
 	}
 	
 		
@@ -62,7 +67,7 @@ public static Object howManyFlips(int k, String s){
 			//deletes the substring and replaces with new flipped substring
 			Pancakes.delete(minusIndex, minusIndex+flipperSize);
 			Pancakes.insert(minusIndex, flippedSubString);
-			System.out.println(Pancakes.toString());
+			//System.out.println(Pancakes.toString());
 				
 				if (answer > 100){
 					return "IMPOSSIBLE";
