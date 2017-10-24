@@ -18,6 +18,7 @@ private static int t;//number of test cases
 public static void main(String...args) throws FileNotFoundException{
 	Scanner sc = new Scanner(new File("C:\\Users\\pl73775\\Downloads\\A-small-practice.in"));
 	//Scanner sc = new Scanner ("3 ---- 4 +--+--+--+ 3 ++++++ 2");
+	int counter = 0;
 	t = sc.nextInt();
 	
 	while(sc.hasNext()){
@@ -25,8 +26,8 @@ public static void main(String...args) throws FileNotFoundException{
 			s = sc.next().toString();	
 		}
 		k = sc.nextInt();
-		
-		System.out.println("Case #1: " + howManyFlips(k,s));
+		counter ++;
+		System.out.println("Case #"+ counter+": "  + howManyFlips(k,s));
 		
 		
 	}
@@ -64,12 +65,12 @@ public static Object howManyFlips(int k, String s){
 			System.out.println(Pancakes.toString());
 				
 				if (answer > 100){
-					return "Impossible";
+					return "IMPOSSIBLE";
 				}
 			}
 		
 		else{
-			return "Impossible";
+			return "IMPOSSIBLE";
 		}
 		
 	}
